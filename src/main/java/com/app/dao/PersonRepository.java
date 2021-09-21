@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Integer> {
 
-    @Query("SELECT CASE WHEN COUNT(p) >0 THEN TRUE ELSE FALSE END FROM person p WHERE s.id = ?1")
-    Boolean isPersonExistsById(Integer id);
+    @Query("SELECT CASE WHEN COUNT(p) > 0 THEN TRUE ELSE FALSE END FROM Person p WHERE p.id=?1")
+    boolean isPersonExistsById(Integer id);
 }

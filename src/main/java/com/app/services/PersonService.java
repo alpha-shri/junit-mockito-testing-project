@@ -12,7 +12,15 @@ public class PersonService {
     @Autowired
     private PersonRepository dao;
 
+    public PersonService(PersonRepository dao) {
+        this.dao = dao;
+    }
+
     public List<Person> getAllPerson() {
         return this.dao.findAll();
+    }
+
+    public Person findByIdService(int id) {
+        return dao.findById(id).get();
     }
 }
